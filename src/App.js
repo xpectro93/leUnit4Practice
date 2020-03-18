@@ -1,76 +1,35 @@
-import React, {useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import axios from 'axios';
-import file from './secret.json';
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 //components
 import Navbar from './Navbar.js';
-
-// 9CAz_vvsK9M
-let dummy = {
-  kind : "youtube#searchResult",
-  etag : "SJZWTG6xR0eGuCOh2bX6w3s4F94/TXI6tD64kFxjA5SYNUeVfGjm3aQ",
-  id : {
-    videoId : "Hg8l1ZAza3I",
-    kind : "youtube#video"
-  },
-  snippet : {
-   publishedAt : "2020-02-11T13:00:03.000Z",
-   title : 'This is the title',
-   description : 'This is the description of the video that describes the description and content of said video that you are watching or about to watch.',
-   channelTitle: "Something@Vevo",
-   thumbnails: {
-      medium: {
-        url: "https://i.ytimg.com/vi/9CAz_vvsK9M/mqdefault.jpg"
-    }
-   }
-  }
-}
+import Home from './components/Home.js';
+import Video from './components/Video.js';
+import Error from './components/Error.js'
+import About from './components/About.js'
 
 const App = () => {
-  const [ searchInput, setSearchInput ] = useState("");
-  const [ queryResults , setQueryResults ] = useState([]);
-  useEffect (() => {
 
-      const fetchData = async _ => {
-        try {
-          
-          // let res = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${file.api_key}&part=snippet&q=strokes`);
-          // setQueryResults(res.data.items);
-          // console.log(res.data.items)
-          let res = [dummy]
-          setQueryResults(res)
-          console.log(res)
-        } catch (err) {
-          console.log(err)
-        }
-
-        finally {
-         
-        }
-      }
-      fetchData();
-  },[])
-  // width="550px" height="400"
-  let videos = queryResults.map((video, i) => {
-    let videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
-    return (
-      <div key ={video.snippet.title-i}className={'vid-container'}>
-        <h3>{video.snippet.title}</h3>
-        <embed className={'video'} src={videoSrc}  scale="aspect" controller="true"/>
-        <div>{new Date(video.snippet.publishedAt).toDateString()}<p>{video.snippet.description}</p></div>
-      </div>
-    )
-  })
-  // {videos.length ? videos: <div><h1> No Search Results. Search for videos above!</h1> </div>}
   return (
     <div className={'App'}>
       <Navbar/>
-      <Switch>
-        <Route>
 
-        </Route>
+      <Switch>
+      <Route exact path={"/"}>
+          <Home/>
+      </Route>
+      <Route exact path={"/about"}>
+        <About/>
+      </Route>
+      <Route path={"/video/:id"}>
+        <Video/>
+      </Route>
+        
+      <Route path="*">
+        <Error/>
+      </Route>
+
       </Switch>
     </div>
   )

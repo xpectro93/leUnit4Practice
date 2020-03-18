@@ -5,8 +5,9 @@ const Navbar = _ => {
   return (
     <nav>
       <ul>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/about'>About</NavLink></li>
+        <li id={'logo'}>DonJonTube</li>
+        <li><NavLink exact to='/' activeClassName={"selected"} >Home</NavLink></li>
+        <li><NavLink to='/about' activeClassName={"selected"} >About</NavLink></li>
       </ul>
     </nav>
   )
