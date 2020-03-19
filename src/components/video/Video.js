@@ -11,9 +11,10 @@ const Video = ({video}) => {
         secure={"true"}
         samesite="None"
         className={'video'} 
-        src={`https://www.youtube.com/embed/${video.id}`}  
+        src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}  
         scale="aspect" 
         controller="true"
+
       />
       <div>{new Date(video.snippet.publishedAt).toDateString()}<p>{video.snippet.description}</p></div>
  </div>)}

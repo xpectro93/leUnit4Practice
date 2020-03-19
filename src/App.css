@@ -20,24 +20,25 @@
 #search-form {
   display:flex;
   flex-direction: row;
-  width:94%;
+  width:80%;
+  margin:auto;
   
 }
 #search-form > input {
   background: darkgrey;
-  width: 50%;
-  margin: 2% auto;
+  width: 70%;
   height: 2vw;
   border-radius: 10px;
   color: black;
   font-size: 2vw;
   text-align: center;
   outline:none;
+  margin:2%;
 }
 #search-form > button {
   width:25%;
   height:2vw;
-  margin:auto;
+  /* margin:auto; */
 }
 
 button:hover {
