@@ -2,15 +2,14 @@ import React from 'react';
 
 
 const Video = ({video}) => {
-
-  debugger
+  document.title = `Watching - ${video.snippet.title}`
   return (
   
   <div key ={video.snippet.title}className={'vid-container'}>
       <h3>{video.snippet.title}</h3>
       <embed 
-        Secure
-        SameSite="None"
+        secure={"true"}
+        samesite="None"
         className={'video'} 
         src={`https://www.youtube.com/embed/${video.id}`}  
         scale="aspect" 

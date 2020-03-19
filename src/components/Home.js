@@ -11,7 +11,7 @@ import axios from 'axios'
 const Home = _ => {
   const searchInput = useInput('');
   const [ queryResults, setQueryResults] = React.useState([]);
-  const makeQuery = async _ =>  await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${secret.api_key}&part=snippet&q=${searchInput.value}`);
+  const makeQuery = async _ =>  await axios.get(`https://www.googleapis.com/youtube/v3/search?maxResults=8&type=video&key=${secret.api_key}&part=snippet&q=${searchInput.value}`);
   
   const handleSubmit = async e => {
     e.preventDefault();

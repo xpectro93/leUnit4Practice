@@ -7,20 +7,31 @@ import Video from './Video';
 import Comment from './Comment';
 
 
-const VideoPage = props => {
+const VideoPage = _ => {
   const { id } = useParams();
   const [ vidData, setVidData ] = React.useState([]);
-  // let vidObj = secret.test_query.items.filter(vid => vid.id.videoId === id);
+ 
+
   React.useEffect(()=> {
     const fetchVideo = async _ => {
-      let vid = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${secret.api_key}&part=snippet`);
-      setVidData(vid.data.items)
-        debugger
+
+      try {
+        let vid = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${secret.api_key}&part=snippet`);
+      
+        setVidData(vid.data.items);
+        
+      } catch( err ) {
+        console.log ( err );
+        
+      }
+  
+
     }
     fetchVideo()
   },[id])
   return (
-    vidData.length ? <Video video={vidData[0]}/> :<div>Something went horribly wrong, leave while you can</div>
+   !vidData.length ? 
+   <div>Something went horribly wrong, leave while you can</div> : <Video video={vidData[0]}/>
       
   )
 
