@@ -12,10 +12,12 @@ const DisplayQuery = props => {
     const vidId = video.id.videoId;
     return(
       <div className={'thumbnails'} 
-           onClick={()=> redirectToVid(vidId)}
            key={title}>
-      <img src={src} alt={title}/>
-      <h5>{title}</h5>
+        <img src={src} 
+            alt={title}
+            onClick={()=> redirectToVid(vidId)}
+        />
+        <h5>{title}</h5>
       </div>
     )
   })

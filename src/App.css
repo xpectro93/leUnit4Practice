@@ -20,6 +20,7 @@
 #search-form {
   display:flex;
   flex-direction: row;
+  width:94%;
   
 }
 #search-form > input {
@@ -35,15 +36,21 @@
 }
 #search-form > button {
   width:25%;
+  height:2vw;
+  margin:auto;
 }
 
-
+button:hover {
+  cursor: pointer;
+}
 nav {
   width:100%;
   background: red;
   display:flex;
 }
 nav > ul {
+  margin:0px;
+  padding:0px;
   list-style: none;
   width:50%;
   display:flex;
@@ -53,11 +60,12 @@ nav > ul {
 #logo {
   margin:auto 3%;
   font-family: 'Audiowide', cursive;
+  text-shadow:  2px 2px 5px white, 2px 3px 10px white, 2px 3px 15px white;
 }
 a {
   color:black;
   font-family: 'Abel', sans-serif;
-  font-size:2vw;
+  font-size: 25px;
 }
 p {
   font-family: 'Abel', sans-serif;
@@ -85,6 +93,8 @@ p {
 .thumbnails > img {
   width:80%;
 }
+.thumbnails > img:hover { cursor:pointer }
+
 .thumbnails > h5 {
   margin:2% 4%;
   font-size: 15px;
@@ -92,6 +102,7 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   color:white;
+  font-family: 'Audiowide', cursive;
 }
 
 @keyframes App-logo-spin {
