@@ -5,7 +5,7 @@ const Comment  = ({ data }) => {
   return (
     <div className={"comment"}>
       <h3>{data.name}</h3>
-      <p>{data.comment}</p>
+  <p>{data.date} : {data.comment}</p>
     </div>
   )
 }
