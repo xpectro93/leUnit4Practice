@@ -21,8 +21,6 @@ const Home = _ => {
     }
 
   }
-
-      console.log(searchInput)
   return (
    <div className={"container"}>
      <form id={"search-form"} onSubmit={handleSubmit}>
@@ -36,4 +34,3 @@ const Home = _ => {
 }
 
 export default Home;
-/* <img src='https://media.giphy.com/media/13DKrIw6LuPYha/giphy.gif' alt='et'/> */

@@ -14,9 +14,10 @@ const Error = _ => {
       g = random(256);
       b = random(256);
       setRgb([r,g,b])
+      console.log(rgb)
     },100)
     return () => clearInterval(tick)
-  }, [])
+  })
    document.title = 'Getting Rolled'
   let [ r , g , b] = rgb;
   return (
