@@ -5,13 +5,13 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .error-video {
-    animation: App-logo-spin infinite 1s linear;
+    animation: App-logo-spin infinite 2s linear;
   }
 }
 .error-video {
   width:50%;
-  height:50vh;
-  margin:15% auto;
+  height:30vw;
+  margin:10% auto;
 }
 
 #search-form {
@@ -25,7 +25,6 @@
 #search-form > input {
   background: darkgrey;
   width: 70%;
-  height: 2vw;
   border-radius: 10px;
   color: black;
   font-size: 2vw;
@@ -35,7 +34,7 @@
 }
 #search-form > button {
   width:25%;
-  height:2vw;
+  font-size: 25px;
 
 }
 
@@ -55,10 +54,17 @@ nav > ul {
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
+
+  transition: all .5s ease;
 }
 #logo {
-  margin:auto 3%;
+  
   font-family: 'Audiowide', cursive;
+  font-size:25px;
+}
+#logo::first-letter {
+  color: #3fd4bb;
+  font-weight: bolder;
 }
 a {
   color:black;
@@ -75,7 +81,7 @@ h3 {
 }
 
 .selected {
-  color:#3fd4bb;
+  color:white;
   font-weight: 500; 
   font-size:25px;
 }
@@ -115,5 +121,43 @@ h3 {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 800px) {
+  nav > ul {
+    width:80%;
+  }
+  .error-video {
+    width:80%;
+    height:60vw;
+    margin:10% auto;
+  }
+  a, .selected {
+    font-size:20px;
+  }
+  #search-form > button {
+    width:25%;
+    font-size: 20px;
+  }
+  #search-input > input {
+    height:20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #search-form {
+    width:96%;
+  }
+  #search-form > input {
+    height:20px;
+  }
+  nav > ul {
+    width:100%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #search-form {
+    width:100%
   }
 }

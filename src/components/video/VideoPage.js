@@ -37,13 +37,12 @@ const VideoPage = _ => {
         let vid = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${secret.api_key}&part=snippet`);
       
         setVidData(vid.data.items);
+        document.title = `Watching - ${vid.data.items[0].snippet.title}`
         
       } catch( err ) {
         console.log ( err );
-        
+        document.title = 'An Opsie has occured'
       }
-  
-
     }
     fetchVideo()
   },[id])

@@ -14,7 +14,7 @@ const Home = _ => {
     try{
       let response = await makeQuery();
       setQueryResults(response.data.items)
-      document.title = `Lookin at ${searchInput.value}`
+      document.title = `Searching for -> ${searchInput.value}`
     } catch (err){
       console.log(err);
       document.title = 'An Opsie Occured'

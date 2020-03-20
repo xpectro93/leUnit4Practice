@@ -9,8 +9,6 @@
 
   .vid-container, .comments, form {
       width:50%;
-
-
       transition: all .25s ease 
   }
   
@@ -51,7 +49,7 @@
   }
   h1 {
     font-family: 'Audiowide', cursive;
-    color:#3fd4bb
+    color:#3fd4bb;
   }
 
   @media only screen and (max-width: 800px) {
