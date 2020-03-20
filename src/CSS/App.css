@@ -3,10 +3,22 @@
   text-align: center;
 }
 
+#logo::first-letter {
+  color: #3fd4bb;
+  font-weight: bolder;
+  
+}
 @media (prefers-reduced-motion: no-preference) {
   .error-video {
     animation: App-logo-spin infinite 2s linear;
   }
+  #logo::first-letter {
+    animation: logo infinite 2s reverse
+  }
+  #logo {
+    animation: logo infinite 2s linear
+  }
+ 
 }
 .error-video {
   width:50%;
@@ -43,7 +55,7 @@ button:hover {
 }
 nav {
   width:100%;
-  background: red;
+  background: rgb(22,22,22);
   display:flex;
 }
 nav > ul {
@@ -58,16 +70,23 @@ nav > ul {
   transition: all .5s ease;
 }
 #logo {
-  
+  color:darkgrey;
   font-family: 'Audiowide', cursive;
   font-size:25px;
 }
-#logo::first-letter {
-  color: #3fd4bb;
-  font-weight: bolder;
-}
+@keyframes logo {
+  0% {
+    color: darkgrey;
+  }
+  40% {
+    color: #3fd4bb;
+  }
+  80% {
+    color: darkgrey;
+  }
+} 
 a {
-  color:black;
+  color:darkgrey;
   font-family: 'Abel', sans-serif;
   font-size: 25px;
 }

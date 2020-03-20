@@ -16,16 +16,21 @@
     width:90%;
     height:30vw;
   }
-  .commnents {
+  .comments {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
+    max-height: 45vh;
   }
+  .comments > div {
+    overflow:auto;
+  }
+  
   .comment {
     width:96%;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-
+    
     transition: width 2.5s ease
   }
   form {

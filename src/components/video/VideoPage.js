@@ -53,7 +53,7 @@ const VideoPage = _ => {
 
      <Video video={vidData[0]}/>
      {userComments.length ? 
-       <div className={'comments'}><h1>Comments</h1> {userComments.map((comment, i ) => <Comment key={i} data={comment} />)}</div> :
+       <div className={'comments'}><h1>Comments</h1><div>{userComments.map((comment, i ) => <Comment key={i} data={comment} />)}</div></div> :
        <div className={'comments'}> <h1>NO COMMENTS ADDED YET</h1></div>
      }
       <form onSubmit={handleSubmit}>
