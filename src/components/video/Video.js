@@ -1,12 +1,11 @@
 import React from 'react';
-import '../../App.css'
-
+import '../../CSS/Video.css'
 
 const Video = ({video}) => {
   document.title = `Watching - ${video.snippet.title}`
   return (
   
-  <div key ={video.snippet.title}className={'vid-container'}>
+  <div key ={video.snippet.title} className={'vid-container'}>
       <h3>{video.snippet.title}</h3>
       <embed 
         secure={"true"}

@@ -12,7 +12,7 @@ const DisplayQuery = props => {
     const vidId = video.id.videoId;
     return(
       <div className={'thumbnails'} 
-           key={title}>
+           key={`${title}-${i}`}>
         <img src={src} 
             alt={title}
             onClick={()=> redirectToVid(vidId)}

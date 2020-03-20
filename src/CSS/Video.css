@@ -1,0 +1,74 @@
+.video-page {
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+  }
+
+  .vid-container, .comments, form {
+      width:50%;
+
+
+      transition: all .25s ease 
+  }
+  
+  .video {
+    width:90%;
+    height:30vw;
+  }
+  .commnents {
+    display:flex;
+    flex-direction: row;
+  }
+  .comment {
+    width:96%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    transition: width 2.5s ease
+  }
+  form {
+      display:flex;
+      flex-direction: column;
+  }
+  form > input {
+      width:50%;
+      margin:2% auto;
+  }
+  textarea {
+      width:90%;
+      margin:2% auto;
+      height:5vw;
+      resize:none;
+      text-align:center;
+  }
+  button {
+    width:50%;
+    margin:auto;
+  }
+  h1 {
+    font-family: 'Audiowide', cursive;
+    color:#3fd4bb
+  }
+
+  @media only screen and (max-width: 800px) {
+    .vid-container, .comments, form {
+        width:90%;
+        margin:auto;
+    }
+    .video {
+        width:100%;
+        height:55vw;
+      }
+
+  }
+  @media only screen and (max-width: 600px) {
+    .vid-container, .comments, form {
+        width:100%;
+        height:auto;
+    }
+
+  }

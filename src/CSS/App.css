@@ -19,6 +19,7 @@
   flex-direction: row;
   width:80%;
   margin:auto;
+  align-items:center;
   
 }
 #search-form > input {
@@ -35,7 +36,7 @@
 #search-form > button {
   width:25%;
   height:2vw;
-  /* margin:auto; */
+
 }
 
 button:hover {
@@ -68,9 +69,15 @@ p {
   font-family: 'Abel', sans-serif;
   color:white;
 }
+h3 {
+  font-family: 'Audiowide', cursive;
+  color: #3fd4bb
+}
+
 .selected {
-  color:White;
+  color:#3fd4bb;
   font-weight: 500; 
+  font-size:25px;
 }
 .container {
   display:flex;
@@ -100,26 +107,6 @@ p {
   text-overflow: ellipsis;
   color:white;
   font-family: 'Audiowide', cursive;
-}
-.video-page {
-  width:100%;
-  height:100vh;
-  background:green;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-};
-.vid-container, .comments, form {
-  width:50%;
-}
-
-.video {
-  width:100%;
-  height:30vw;
-}
-
-.comment {
-  width:100%
 }
 
 @keyframes App-logo-spin {

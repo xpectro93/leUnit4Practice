@@ -3,6 +3,7 @@ import secret from '../../secret.json';
 import { useParams } from 'react-router-dom';
 import { useInput } from '../../utils/customHook.js'
 import axios from 'axios';
+import '../../CSS/Video.css'
 
 import Video from './Video';
 import Comment from './Comment';
@@ -53,12 +54,12 @@ const VideoPage = _ => {
 
      <Video video={vidData[0]}/>
      {userComments.length ? 
-       <div className={'comments'}> {userComments.map((comment, i ) => <Comment key={i} data={comment} />)}</div> :
+       <div className={'comments'}><h1>Comments</h1> {userComments.map((comment, i ) => <Comment key={i} data={comment} />)}</div> :
        <div className={'comments'}> <h1>NO COMMENTS ADDED YET</h1></div>
      }
       <form onSubmit={handleSubmit}>
         <input {...name}  placeholder={'Enter your name'} required/>
-        <input {...comment} placeholder={'Type Comment heerr'} required/>
+        <textarea {...comment} placeholder={'Type Comment heerr'} required/>
         <button type={'submit'}>Submit</button>
       </form>
    </div>
