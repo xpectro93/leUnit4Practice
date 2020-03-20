@@ -21,7 +21,7 @@ const VideoPage = _ => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    let date =  new Date().toString()
+    let date =  new Date().toDateString()
     let newComment = { name : name.value, comment: comment.value, date: date };
 
     let newComments = [newComment, ...userComments];
@@ -49,11 +49,13 @@ const VideoPage = _ => {
   return (
    !vidData.length ? 
    <div>Something went horribly wrong, leave while you can</div> : 
-   <div>
+   <div className={'video-page'}>
 
      <Video video={vidData[0]}/>
-     {userComments.length ? userComments.map(comment => <Comment data={comment} />) :<h1>NO COMMENTS ADDED YET, FAM </h1>   
-    }
+     {userComments.length ? 
+       <div className={'comments'}> {userComments.map((comment, i ) => <Comment key={i} data={comment} />)}</div> :
+       <div className={'comments'}> <h1>NO COMMENTS ADDED YET</h1></div>
+     }
       <form onSubmit={handleSubmit}>
         <input {...name}  placeholder={'Enter your name'} required/>
         <input {...comment} placeholder={'Type Comment heerr'} required/>

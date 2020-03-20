@@ -13,10 +13,7 @@
   height:50vh;
   margin:15% auto;
 }
-.video {
-  width:500px;
-  height:400px;
-}
+
 #search-form {
   display:flex;
   flex-direction: row;
@@ -103,6 +100,26 @@ p {
   text-overflow: ellipsis;
   color:white;
   font-family: 'Audiowide', cursive;
+}
+.video-page {
+  width:100%;
+  height:100vh;
+  background:green;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+};
+.vid-container, .comments, form {
+  width:50%;
+}
+
+.video {
+  width:100%;
+  height:30vw;
+}
+
+.comment {
+  width:100%
 }
 
 @keyframes App-logo-spin {

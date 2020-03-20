@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.css'
 
 
 const Video = ({video}) => {
@@ -16,7 +17,6 @@ const Video = ({video}) => {
         controller="true"
 
       />
-      <div>{new Date(video.snippet.publishedAt).toDateString()}<p>{video.snippet.description}</p></div>
  </div>)}
   
 
