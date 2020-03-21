@@ -79,7 +79,7 @@ nav > ul {
     color: darkgrey;
   }
   40% {
-    color: #3fd4bb;
+    color:#bf2a8b;
   }
   80% {
     color: darkgrey;
@@ -92,7 +92,7 @@ a {
 }
 p {
   font-family: 'Abel', sans-serif;
-  color:white;
+  color:#bf2a8b;
 }
 h3 {
   font-family: 'Audiowide', cursive;
@@ -100,7 +100,7 @@ h3 {
 }
 
 .selected {
-  color:white;
+  color:#bf2a8b;
   font-weight: 500; 
   font-size:25px;
 }
@@ -130,7 +130,7 @@ h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color:white;
+  color:#bf2a8b;
   font-family: 'Audiowide', cursive;
 }
 

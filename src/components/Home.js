@@ -28,7 +28,7 @@ const Home = _ => {
       <button type={"submit"}>Search</button>
      </form>
      
-     {queryResults.length ? <DisplayQuery response={ queryResults}/> : <h1>Search for something</h1>}
+     {queryResults.length ? <DisplayQuery response={ queryResults}/> : <h1>Hey there, Potato!! <br></br> Search for something!</h1>}
    </div>
   )
 }
