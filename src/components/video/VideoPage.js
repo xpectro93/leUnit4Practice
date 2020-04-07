@@ -1,26 +1,68 @@
 import React from 'react';
 import secret from '../../secret.json';
 import { useParams } from 'react-router-dom';
+import { useInput } from '../../utils/customHook.js'
 import axios from 'axios';
+import '../../CSS/Video.css'
 
 import Video from './Video';
 import Comment from './Comment';
 
 
-const VideoPage = props => {
+const VideoPage = _ => {
+  
+  ///comments state
+  const name = useInput('');
+  const comment = useInput('');
+  const [ userComments, setUserComments ] = React.useState([]);
+
+  //video state
   const { id } = useParams();
   const [ vidData, setVidData ] = React.useState([]);
-  // let vidObj = secret.test_query.items.filter(vid => vid.id.videoId === id);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    let date =  new Date().toDateString()
+    let newComment = { name : name.value, comment: comment.value, date: date };
+
+    let newComments = [newComment, ...userComments];
+    setUserComments(newComments);
+
+  }
+
   React.useEffect(()=> {
     const fetchVideo = async _ => {
-      let vid = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${secret.api_key}&part=snippet`);
-      setVidData(vid.data.items)
-        debugger
+
+      try {
+        let vid = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${secret.api_key}&part=snippet`);
+      
+        setVidData(vid.data.items);
+        document.title = `Watching - ${vid.data.items[0].snippet.title}`
+        
+      } catch( err ) {
+        console.log ( err );
+        document.title = 'An Opsie has occured'
+      }
     }
     fetchVideo()
   },[id])
   return (
-    vidData.length ? <Video video={vidData[0]}/> :<div>Something went horribly wrong, leave while you can</div>
+   !vidData.length ? 
+   <div>Something went horribly wrong, leave while you can</div> : 
+   <div className={'video-page'}>
+
+     <Video video={vidData[0]}/>
+     {userComments.length ? 
+       <div className={'comments'}><h1>Comments</h1><div>{userComments.map((comment, i ) => <Comment key={i} data={comment} />)}</div></div> :
+       <div className={'comments'}> <h1>NO COMMENTS ADDED YET</h1></div>
+     }
+      <form onSubmit={handleSubmit}>
+        <input {...name}  placeholder={'Enter your name'} required/>
+        <textarea {...comment} placeholder={'Type Comment heerr'} required/>
+        <button type={'submit'}>Submit</button>
+      </form>
+   </div>
+   
       
   )
 

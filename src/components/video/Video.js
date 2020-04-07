@@ -1,21 +1,20 @@
 import React from 'react';
-
+import '../../CSS/Video.css'
 
 const Video = ({video}) => {
-
   return (
   
-  <div key ={video.snippet.title}className={'vid-container'}>
+  <div key ={video.snippet.title} className={'vid-container'}>
       <h3>{video.snippet.title}</h3>
       <embed 
-        Secure
-        SameSite="None"
+        secure={"true"}
+        samesite="None"
         className={'video'} 
-        src={`https://www.youtube.com/embed/${video.id}`}  
+        src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}  
         scale="aspect" 
         controller="true"
+
       />
-      <div>{new Date(video.snippet.publishedAt).toDateString()}<p>{video.snippet.description}</p></div>
  </div>)}
   
 

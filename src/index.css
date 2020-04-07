@@ -1,5 +1,3 @@
-
-
 html,body {
   margin: 0;
   width:100%;
@@ -13,3 +11,33 @@ html,body {
   
 }
 
+input, textarea, button {
+	font-family: 'Abel', sans-serif;
+	border-style:hidden;
+	background:rgb(22, 22, 22);
+	color:#bf2a8b;
+	text-align:center;
+	outline: none;
+	border-radius:10px;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: rgb(22,22,22); 
+	border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background:#257769; 
+	border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #3fd4bb;
+  }

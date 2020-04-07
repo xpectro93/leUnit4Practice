@@ -4,15 +4,14 @@ const DisplayQuery = props => {
   const history = useHistory();
 
   const redirectToVid = id => history.push(`/video/${id}`)
-
-  console.log(props.response)
+  
   const videos = props.response.map( (video, i) => {
     const title = video.snippet.title;
     const src = video.snippet.thumbnails.medium.url;
     const vidId = video.id.videoId;
     return(
       <div className={'thumbnails'} 
-           key={title}>
+           key={`${title}-${i}`}>
         <img src={src} 
             alt={title}
             onClick={()=> redirectToVid(vidId)}
