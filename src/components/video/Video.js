@@ -3,7 +3,6 @@ import React from 'react';
 
 const Video = ({video}) => {
 
-  debugger
   return (
   
   <div key ={video.snippet.title}className={'vid-container'}>
